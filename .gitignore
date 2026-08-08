@@ -1,0 +1,10 @@
+node_modules/
+artifacts/
+cache/
+typechain-types/
+.env
+coverage/
+coverage.json
+offchain/config.json
+offchain/data/
+site/dist/

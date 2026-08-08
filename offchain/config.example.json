@@ -1,0 +1,38 @@
+{
+  "chains": {
+    "sepolia": {
+      "chainId": 11155111,
+      "rpcUrl": "https://ethereum-sepolia-rpc.publicnode.com",
+      "bridge": "0x0000000000000000000000000000000000000000",
+      "confirmations": 5,
+      "startBlock": 0
+    },
+    "bscTestnet": {
+      "chainId": 97,
+      "rpcUrl": "https://data-seed-prebsc-1-s1.binance.org:8545",
+      "bridge": "0x0000000000000000000000000000000000000000",
+      "confirmations": 10,
+      "startBlock": 0
+    }
+  },
+  "tokenMappings": [
+    {
+      "sourceChain": "sepolia",
+      "sourceToken": "0x2b2fb8df4ac5d394f0d5674d7a54802e42a06aba",
+      "destChain": "bscTestnet",
+      "destToken": "0x0000000000000000000000000000000000000000"
+    },
+    {
+      "sourceChain": "bscTestnet",
+      "sourceToken": "0x0000000000000000000000000000000000000000",
+      "destChain": "sepolia",
+      "destToken": "0x2b2fb8df4ac5d394f0d5674d7a54802e42a06aba"
+    }
+  ],
+  "validator": { "port": 8700, "pollIntervalMs": 15000 },
+  "monitor": { "pollIntervalMs": 30000 },
+  "relayer": {
+    "validatorEndpoints": ["http://localhost:8700", "http://localhost:8701", "http://localhost:8702"],
+    "pollIntervalMs": 15000
+  }
+}

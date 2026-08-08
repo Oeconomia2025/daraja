@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-crypto-dark text-white antialiased;
+  background-image: radial-gradient(ellipse at top, rgba(0, 212, 255, 0.06), transparent 60%),
+    radial-gradient(ellipse at bottom, rgba(255, 0, 255, 0.05), transparent 60%);
+  min-height: 100vh;
+}
+
+.gradient-text {
+  background: linear-gradient(45deg, #00d4ff, #ff00ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-button {
+  background: linear-gradient(45deg, #00d4ff, #ff00ff);
+}
+
+.gradient-border {
+  background: linear-gradient(#121315, #121315) padding-box,
+    linear-gradient(45deg, #a855f7, #3b82f6, #06b6d4) border-box;
+  border: 1px solid transparent;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
