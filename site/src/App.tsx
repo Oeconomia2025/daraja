@@ -238,9 +238,9 @@ export default function App() {
           <img src="/oec-logo.png" alt="OEC" className="w-9 h-9 rounded-full" />
           <div>
             <h1 className="text-lg font-bold">
-              Oeconomia <span className="gradient-text">Bridge</span>
+              <span className="gradient-text">Daraja</span>
             </h1>
-            <p className="text-xs text-gray-500">Sepolia ↔ BSC Testnet</p>
+            <p className="text-xs text-gray-500">Oeconomia Bridge · Sepolia ↔ BSC Testnet</p>
           </div>
         </div>
         {isConnected && address ? (
@@ -427,7 +427,7 @@ export default function App() {
       </main>
 
       <footer className="px-6 py-4 text-center text-xs text-gray-600 border-t border-crypto-border/60">
-        Oeconomia Bridge · lock-and-mint with validator quorum, timelocked admin, and outflow rate
+        Daraja · lock-and-mint with validator quorum, timelocked admin, and outflow rate
         limits ·{" "}
         <a href="https://oeconomia.io" target="_blank" rel="noreferrer" className="text-crypto-blue hover:underline">
           oeconomia.io

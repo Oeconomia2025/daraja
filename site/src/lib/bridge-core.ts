@@ -71,7 +71,7 @@ export function transferFromReceipt(
 
   const digest = hashTypedData({
     domain: {
-      name: "OeconomiaBridge",
+      name: "Daraja",
       version: "1",
       chainId: BigInt(dest.chainId),
       verifyingContract: dest.bridge,
@@ -122,7 +122,7 @@ export function parseAmount(input: string, decimals: number): bigint {
 // localStorage persistence so transfers survive refresh
 // ------------------------------------------------------------------
 
-const STORAGE_KEY = "oeconomia-bridge-transfers";
+const STORAGE_KEY = "daraja-transfers";
 
 export function loadTransfers(): PendingTransfer[] {
   try {

@@ -2,7 +2,7 @@ import { ethers } from "hardhat";
 
 /**
  * Deploys the full bridge stack on one chain:
- *   TimelockController -> ValidatorRegistry -> OeconomiaBridge
+ *   TimelockController -> ValidatorRegistry -> Daraja
  *
  * Env configuration (.env):
  *   TIMELOCK_DELAY   seconds (default 3600; use 86400+ in production)
@@ -72,14 +72,14 @@ async function main() {
   await registry.waitForDeployment();
   console.log("ValidatorRegistry:", registry.target);
 
-  const bridge = await ethers.deployContract("OeconomiaBridge", [
+  const bridge = await ethers.deployContract("Daraja", [
     timelock.target,
     registry.target,
     guardians,
     guardianQuorum,
   ]);
   await bridge.waitForDeployment();
-  console.log("OeconomiaBridge:", bridge.target);
+  console.log("Daraja:", bridge.target);
 
   console.log("\nNext steps (all via timelock schedule/execute):");
   console.log("  1. registerToken(token, 1=Native | 2=Wrapped)");

@@ -1,5 +1,5 @@
 {
-  "name": "oeconomia-bridge-contracts",
+  "name": "daraja-contracts",
   "version": "0.1.0",
   "description": "Oeconomia Cross-Chain Bridge - security-first lock-and-mint bridge (pre-audit build)",
   "scripts": {

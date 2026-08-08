@@ -6,7 +6,7 @@ Pre-audit, testnet-only build.
 
 ## Layout
 
-- `contracts/OeconomiaBridge.sol` - main bridge (lock/release native, mint/burn wrapped)
+- `contracts/Daraja.sol` - main bridge (lock/release native, mint/burn wrapped)
 - `contracts/ValidatorRegistry.sol` - validator set + quorum verification, timelock-owned
 - `contracts/BridgedToken.sol` - wrapped ERC-20, mintable only by the bridge
 - `contracts/GuardianPausable.sol` - multi-party emergency pause

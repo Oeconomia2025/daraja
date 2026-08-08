@@ -1,4 +1,4 @@
-// Oeconomia Bridge frontend configuration.
+// Daraja frontend configuration.
 // SOURCE OF TRUTH lives in bridge-claude-workspace/site/src/lib/ - the copy in
 // eloqura-claude-workspace/client/src/lib/ must be kept identical.
 //

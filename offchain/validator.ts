@@ -17,7 +17,7 @@ import {
 import { JsonStore } from "./store";
 
 /**
- * Oeconomia bridge validator daemon.
+ * Daraja validator daemon.
  *
  * SECURITY POSTURE
  *  - Signs ONLY events this process read from its own configured RPC, and

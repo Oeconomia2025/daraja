@@ -7,7 +7,7 @@ import type {
   MockERC20,
   MockFeeToken,
   MockRuggableToken,
-  OeconomiaBridge,
+  Daraja,
   TimelockController,
   ValidatorRegistry,
 } from "../typechain-types";
@@ -43,7 +43,7 @@ interface Message {
   nonce: bigint;
 }
 
-describe("OeconomiaBridge", () => {
+describe("Daraja", () => {
   async function deployFixture() {
     const [admin, user, recipient, guardian1, guardian2, guardian3, outsider] =
       await ethers.getSigners();
@@ -63,12 +63,12 @@ describe("OeconomiaBridge", () => {
       threshold,
     ])) as unknown as ValidatorRegistry;
 
-    const bridge = (await ethers.deployContract("OeconomiaBridge", [
+    const bridge = (await ethers.deployContract("Daraja", [
       admin.address,
       registry.target,
       [guardian1.address, guardian2.address, guardian3.address],
       2,
-    ])) as unknown as OeconomiaBridge;
+    ])) as unknown as Daraja;
 
     const native = (await ethers.deployContract("MockERC20", [
       "Native",
@@ -95,7 +95,7 @@ describe("OeconomiaBridge", () => {
 
     const chainId = (await ethers.provider.getNetwork()).chainId;
     const domain = {
-      name: "OeconomiaBridge",
+      name: "Daraja",
       version: "1",
       chainId,
       verifyingContract: bridge.target as string,

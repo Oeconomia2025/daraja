@@ -11,7 +11,7 @@ import {
 import { JsonStore } from "./store";
 
 /**
- * Oeconomia bridge monitoring daemon.
+ * Daraja monitoring daemon.
  *
  * Watches every configured chain for:
  *  1. LOCAL invariant breaks (backing < locked, supply > minted). Free

@@ -16,7 +16,7 @@ import {
 import { JsonStore, SignatureRecord } from "./store";
 
 /**
- * Oeconomia bridge relayer daemon.
+ * Daraja relayer daemon.
  *
  * Relayers are untrusted by design: submitting a message grants no authority
  * beyond what the validator quorum signed, and the contract re-verifies

@@ -6,7 +6,7 @@ import type {
   BridgedToken,
   MockERC20,
   MockRuggableToken,
-  OeconomiaBridge,
+  Daraja,
   ValidatorRegistry,
 } from "../typechain-types";
 import { SourceEvent, buildMessage, selectQuorum, signMessage } from "../offchain/lib";
@@ -28,18 +28,18 @@ describe("bridge monitor", () => {
     const threshold = 2;
     const validatorSet = new Set(validators.map((v) => v.address.toLowerCase()));
 
-    async function deployBridge(): Promise<{ bridge: OeconomiaBridge; registry: ValidatorRegistry }> {
+    async function deployBridge(): Promise<{ bridge: Daraja; registry: ValidatorRegistry }> {
       const registry = (await ethers.deployContract("ValidatorRegistry", [
         admin.address,
         validators.map((v) => v.address),
         threshold,
       ])) as unknown as ValidatorRegistry;
-      const bridge = (await ethers.deployContract("OeconomiaBridge", [
+      const bridge = (await ethers.deployContract("Daraja", [
         admin.address,
         registry.target,
         [guardian1.address, guardian2.address],
         2,
-      ])) as unknown as OeconomiaBridge;
+      ])) as unknown as Daraja;
       await bridge.setSupportedChain(SOURCE_CHAIN, true);
       return { bridge, registry };
     }

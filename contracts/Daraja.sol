@@ -12,7 +12,7 @@ import {ValidatorRegistry} from "./ValidatorRegistry.sol";
 import {BridgedToken} from "./BridgedToken.sol";
 import {GuardianPausable} from "./GuardianPausable.sol";
 
-/// @title OeconomiaBridge
+/// @title Daraja
 /// @notice Lock-and-mint cross-chain bridge. The same contract is deployed on
 ///         every chain; each token is registered as either Native (locked and
 ///         released here) or Wrapped (minted and burned here).
@@ -36,7 +36,7 @@ import {GuardianPausable} from "./GuardianPausable.sol";
 ///  - Relayers: fully permissionless - anyone may submit a validly signed
 ///    message; submission grants no authority beyond what the quorum signed.
 /// No single role can both change configuration and move funds.
-contract OeconomiaBridge is AccessControl, ReentrancyGuard, GuardianPausable, EIP712 {
+contract Daraja is AccessControl, ReentrancyGuard, GuardianPausable, EIP712 {
     using SafeERC20 for IERC20;
     using BridgeMessages for BridgeMessages.BridgeMessage;
 
@@ -108,7 +108,7 @@ contract OeconomiaBridge is AccessControl, ReentrancyGuard, GuardianPausable, EI
         ValidatorRegistry registry_,
         address[] memory guardians,
         uint256 guardianQuorum
-    ) EIP712("OeconomiaBridge", "1") {
+    ) EIP712("Daraja", "1") {
         require(timelock != address(0), "Bridge: zero timelock");
         require(address(registry_) != address(0), "Bridge: zero registry");
         // Initialization audit (spec 4): the registry constructor has already

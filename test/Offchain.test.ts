@@ -5,7 +5,7 @@ import type { HDNodeWallet } from "ethers";
 import type {
   BridgedToken,
   MockERC20,
-  OeconomiaBridge,
+  Daraja,
   ValidatorRegistry,
 } from "../typechain-types";
 import {
@@ -39,12 +39,12 @@ describe("off-chain validator pipeline", () => {
       validators.map((v) => v.address),
       threshold,
     ])) as unknown as ValidatorRegistry;
-    const bridge = (await ethers.deployContract("OeconomiaBridge", [
+    const bridge = (await ethers.deployContract("Daraja", [
       admin.address,
       registry.target,
       [guardian1.address, guardian2.address],
       2,
-    ])) as unknown as OeconomiaBridge;
+    ])) as unknown as Daraja;
     const native = (await ethers.deployContract("MockERC20", [
       "Native",
       "NAT",

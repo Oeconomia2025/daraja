@@ -4,7 +4,7 @@ import { ethers } from "ethers";
  * Shared logic for the off-chain validator and relayer.
  *
  * Everything here mirrors the on-chain contracts exactly:
- *  - the EIP-712 domain and struct match OeconomiaBridge / BridgeMessages.sol
+ *  - the EIP-712 domain and struct match Daraja / BridgeMessages.sol
  *  - quorum selection enforces the same rules ValidatorRegistry.verifyQuorum
  *    does (distinct signers, current members only, strictly ascending order),
  *    so a bundle the relayer submits is either accepted on-chain or was
@@ -68,14 +68,14 @@ export interface SourceEvent {
 
 export function domainFor(destChainId: bigint, destBridge: string) {
   return {
-    name: "OeconomiaBridge",
+    name: "Daraja",
     version: "1",
     chainId: destChainId,
     verifyingContract: destBridge,
   };
 }
 
-/** The exact digest OeconomiaBridge computes via _hashTypedDataV4. */
+/** The exact digest Daraja computes via _hashTypedDataV4. */
 export function computeDigest(m: BridgeMessage): string {
   return ethers.TypedDataEncoder.hash(domainFor(m.destChainId, m.bridge), EIP712_TYPES, m);
 }

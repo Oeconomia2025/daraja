@@ -1,4 +1,4 @@
-# Oeconomia Bridge - Hardening Record
+# Daraja - Hardening Record
 
 This document is the written record required by `bridge-hardening-spec.md`
 section 7: for each requirement, where it is enforced, which attacker inputs
@@ -7,7 +7,7 @@ the independent auditor. This build targets testnet only.
 
 ## 1. Architecture and Trust Model
 
-**Design:** lock-and-mint. The same `OeconomiaBridge` contract is deployed on
+**Design:** lock-and-mint. The same `Daraja` contract is deployed on
 every chain. Each token is registered as `Native` (locked/released on this
 chain) or `Wrapped` (minted/burned on this chain, as a `BridgedToken`).
 
